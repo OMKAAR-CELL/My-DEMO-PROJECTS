@@ -1,45 +1,51 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <section className="hero">
-        <div className="w-full h-[400px] relative">
-          <Image
-            src="/cover.png"
-            alt="Cover Image"
-            fill
-            style={{ objectFit: "cover" }}
-            priority
-          />
+  <div className="w-full h-[400px] relative">
+    <Image
+      src="/cover.png"
+      alt="Cover Image"
+      fill
+      style={{ objectFit: "cover" }}
+      priority
+    />
 
-          <div className="absolute inset-0 bg-black opacity-20"></div>
-          <div className="absolute inset-0 flex items-center justify-center gap-40 text-white">
-            <div className="flex flex-col gap-4 items-center justify-center text-center">
-              <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
-              <h2>
-                Hi, I’m Veena — a storyteller, blogger, and coffee lover from
-                India
-              </h2>
-              <button
-                type="button"
-                className="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-300"
-              >
-                Contact Me
-              </button>
-            </div>
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black opacity-20"></div>
 
-            <div className=" relative rounded-3xl overflow-hidden shadow-md">
-              <Image
-                src="/Veena.png"
-                alt="Profile Image"
-                width={250}
-                height={250}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Content */}
+    <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-40 text-white px-4 text-center md:text-left">
+      <div className="flex flex-col gap-4 items-center md:items-start justify-center max-w-md">
+        <h1 className="text-3xl md:text-4xl font-bold">Welcome to My Portfolio</h1>
+        <h2 className="text-base md:text-lg">
+          Hi, I’m Veena — a storyteller, blogger, and coffee lover from India
+        </h2>
+        <Link href="/contact">
+          <button
+            type="button"
+            className="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 text-white font-semibold py-2 px-6 rounded-full shadow-md transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-300"
+          >
+            Contact Me
+          </button>
+        </Link>
+      </div>
+
+      <div className="relative rounded-3xl overflow-hidden shadow-md mt-6 md:mt-0">
+        <Image
+          src="/Veena.png"
+          alt="Profile Image"
+          width={200}
+          height={200}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
       <div className="w-full h-1 bg-gradient-to-r from-pink-400 via-pink-300 to-pink-400 rounded-full opacity-25" />
 
       <section className="px-6 py-16 bg-[#fef9f4]">

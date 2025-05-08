@@ -13,6 +13,11 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: "Veena Mishra - Writer & Blogger",
   description: "Demo blog and portfolio site",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: "blog, writer, portfolio",
+
 };
 
 export default function RootLayout({ children }) {
